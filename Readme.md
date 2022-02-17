@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Наталья Володина](https://up.htmlacademy.ru/javascript/25/user/90698).
-* Наставник: [Павел Нюкало] (https://htmlacademy.ru/profile/nyukalopavel).
+* Наставник: [Павел Нюкало](https://htmlacademy.ru/profile/nyukalopavel).
 
 ---
 
