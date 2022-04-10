@@ -27,7 +27,7 @@ const createObject = (id) => {
 };
 
 const RAZ=25;
-const generateObjects=[];
+export const generateObjects=[];
 for (let i = 1; i <= RAZ; i++){
   generateObjects.push(createObject(i));
 }
