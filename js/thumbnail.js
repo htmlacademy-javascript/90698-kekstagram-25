@@ -1,5 +1,5 @@
 import {generateObjects} from './js/data.js';
-generateObjects.slice().reverse();
+//generateObjects.slice().reverse();
 
 const pictureList=document.querySelector('.pictures');
 const pictureTemplate=document.querySelector('#picture').content.querySelector('.picture');
