@@ -62,6 +62,7 @@ const socialCommentCount=document.querySelector('.social__comment-count');
 const commentsLoader=document.querySelector('.comments-loader');
 socialCommentCount.classList.add('hidden');
 commentsLoader.classList.add('hidden');
+const body=document.querySelector('body');
 body.classList.add('modal-open');
 
 const closeBigPicture=document.querySelector('.big-picture__cancel');
