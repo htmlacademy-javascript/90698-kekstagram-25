@@ -1,7 +1,7 @@
+import {generateObjects} from './data.js';
 const userDialog=document.querySelector('.big-picture');
 userDialog.classList.remove('hidden');
 
-import {generateObjects} from './data.js';
 const fragment=document.createDocumentFragment();
 
 const pictureList=userDialog.querySelector('.big-picture__preview');
