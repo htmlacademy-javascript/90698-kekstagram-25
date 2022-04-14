@@ -1,31 +1,33 @@
+import {isEscapeKey} from './util.js';
 import {generateObjects} from './data.js';
 const userDialog=document.querySelector('.big-picture');
+const body=document.querySelector('body');
 
-const CLOSET=function(){
-  const closeBigPicture=document.querySelector('.big-picture__cancel');
-  closeBigPicture.addEventListener('click', function () {
-userDialog.classList.add('hidden');
-});
-
-document.addEventListener('keydown', function (evt) {
- if (evt.keyCode===27) {
-   userDialog.classList.add('hidden');
- }
-});
-}
-
-const OPEN=function(){
+const openFullPicture=function(){
   userDialog.classList.remove('hidden');
   const socialCommentCount=document.querySelector('.social__comment-count');
   const commentsLoader=document.querySelector('.comments-loader');
   socialCommentCount.classList.add('hidden');
   commentsLoader.classList.add('hidden');
-  const body=document.querySelector('body');
   body.classList.add('modal-open');
-}
 
+  document.addEventListener('keydown', (evt) => {
+    if (isEscapeKey(evt)) {
+      evt.preventDefault();
+      userDialog.classList.add('hidden');
+    }
+  });
+};
 
-const fragment=document.createDocumentFragment();
+const closeFullPicture=function(){
+  const closeBigPicture=document.querySelector('.big-picture__cancel');
+
+  closeBigPicture.addEventListener('click', function () {
+  userDialog.classList.add('hidden');
+});
+};
+
+/*const fragment=document.createDocumentFragment();
 
 const pictureList=userDialog.querySelector('.big-picture__preview');
 pictureList.innerHTML = '';
@@ -79,4 +81,4 @@ generateObjects.forEach(({description})=>{
   fragment.appendChild(pictureElement);
 });
 
-pictureList.appendChild(fragment);
+pictureList.appendChild(fragment);*/
