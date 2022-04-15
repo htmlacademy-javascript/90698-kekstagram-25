@@ -1,31 +1,48 @@
 import {isEscapeKey} from './util.js';
 import {generateObjects} from './data.js';
+
 const userDialog=document.querySelector('.big-picture');
+const closeBigPicture=document.querySelector('.big-picture__cancel');
+const socialCommentCount=document.querySelector('.social__comment-count');
+const commentsLoader=document.querySelector('.comments-loader');
 const body=document.querySelector('body');
 
-const openFullPicture=function(){
+const onBigPictureEscKeydown = (evt)=>{
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeFullPicture();
+  }
+};
+function openFullPicture(){
   userDialog.classList.remove('hidden');
-  const socialCommentCount=document.querySelector('.social__comment-count');
-  const commentsLoader=document.querySelector('.comments-loader');
   socialCommentCount.classList.add('hidden');
   commentsLoader.classList.add('hidden');
   body.classList.add('modal-open');
 
+  document.addEventListener('keydown', onBigPictureEscKeydown);
+}
+
+function closeFullPicture(){
+  userDialog.classList.add('hidden');
+  body.classList.remove('modal-open');
+
+  document.removeEventListener('keydown', onBigPictureEscKeydown);
+}
+
+/*pictureList.addEventListener('click', () => {
+  openFullPicture();
+
   document.addEventListener('keydown', (evt) => {
     if (isEscapeKey(evt)) {
       evt.preventDefault();
-      userDialog.classList.add('hidden');
+      openFullPicture();
     }
   });
-};
+});*/
 
-const closeFullPicture=function(){
-  const closeBigPicture=document.querySelector('.big-picture__cancel');
-
-  closeBigPicture.addEventListener('click', function () {
-  userDialog.classList.add('hidden');
+closeBigPicture.addEventListener('click', () => {
+  closeFullPicture();
 });
-};
 
 /*const fragment=document.createDocumentFragment();
 

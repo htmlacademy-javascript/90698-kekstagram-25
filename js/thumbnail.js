@@ -1,5 +1,4 @@
 import {generateObjects} from './data.js';
-
 const pictureList=document.querySelector('.pictures');
 const pictureTemplate=document.querySelector('#picture').content.querySelector('.picture');
 const fragment=document.createDocumentFragment();
@@ -12,3 +11,5 @@ generateObjects.forEach(({url,likes,comments})=>{
   fragment.appendChild(pictureElement);
 });
 pictureList.appendChild(fragment);
+
+
