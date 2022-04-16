@@ -4,4 +4,7 @@ const returnRandomInteger = function (min, max) {
   const rez = Math.floor(Math.random() * (max - min + 1)) + min;
   return rez;
 };
-export {returnRandomInteger};
+const isEscapeKey = function(evt) {
+  return evt.key === 'Escape';
+};
+export {returnRandomInteger,isEscapeKey};
