@@ -12,4 +12,9 @@ generateObjects.forEach(({url,likes,comments})=>{
 });
 pictureList.appendChild(fragment);
 
+function pictureListFull (evt) {
+  if (evt.target.className === 'picture__img') {
+    pictureList.textContent = evt.target.value;
+  }
+}
 
