@@ -1,4 +1,5 @@
 import {generateObjects} from './data.js';
+import { openFullPicture } from './full_picture.js';
 const pictureList=document.querySelector('.pictures');
 const pictureTemplate=document.querySelector('#picture').content.querySelector('.picture');
 const fragment=document.createDocumentFragment();
@@ -12,9 +13,30 @@ generateObjects.forEach(({url,likes,comments})=>{
 });
 pictureList.appendChild(fragment);
 
+pictureList.addEventListener('click', () => {
+  openFullPicture();
+  pictureListFull();
+
+  document.addEventListener('keydown', (evt) => {
+    if (isEscapeKey(evt)) {
+      evt.preventDefault();
+      openFullPicture();
+    }
+  });
+});
+
 function pictureListFull (evt) {
-  if (evt.target.className === 'picture__img') {
-    pictureList.textContent = evt.target.value;
+  if (evt.target.closest('.big-picture__img')) {
+    
+  }
+  if (evt.target.closest('.likes-count')) {
+    
+  }
+  if (evt.target.closest('.comments-count')) {
+    
+  }
+  if (evt.target.closest('.social__caption')) {
+    
   }
 }
 
